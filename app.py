@@ -4,7 +4,6 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import requests
 
-
 # Page configuration
 st.set_page_config(page_title="Health Assistant",
                    layout="wide",
@@ -12,8 +11,6 @@ st.set_page_config(page_title="Health Assistant",
     
 # Getting the working directory of the main.py
 working_dir = os.path.dirname(os.path.abspath(__file__))
-
-
 
 def load_model_from_github(url):
     response = requests.get(url)
@@ -24,13 +21,10 @@ model1_url = "https://raw.githubusercontent.com/MohammadErfanRashidi/Disease-App
 model2_url = "https://raw.githubusercontent.com/MohammadErfanRashidi/Disease-App/main/saved%20models/heart_disease_model.sav"
 model3_url = "https://raw.githubusercontent.com/MohammadErfanRashidi/Disease-App/main/saved%20models/parkinsons_model.sav"
 
-
 # Loading the saved models
 diabetes_model = load_model_from_github(model1_url)
 heart_disease_model = load_model_from_github(model2_url)
 parkinsons_model = load_model_from_github(model3_url)
-
-
 
 # Sidebar
 with st.sidebar:
